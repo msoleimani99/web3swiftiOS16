@@ -129,12 +129,12 @@ public struct RLP {
         return encodedLength
     }
 
-    internal static func decode(_ raw: String) -> RLPItem? {
+    public static func decode(_ raw: String) -> RLPItem? {
         guard let rawData = Data.fromHex(raw) else { return nil }
         return decode(rawData)
     }
 
-    internal static func decode(_ raw: Data) -> RLPItem? {
+    public static func decode(_ raw: Data) -> RLPItem? {
         if raw.count == 0 {
             return RLPItem.noItem
         }
